@@ -26,22 +26,23 @@ public class MainActivity extends AppCompatActivity
     {
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(MainActivity.this, LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
 
 //        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(MainActivity.this, linearLayoutManager.getOrientation());
 //        recyclerView.addItemDecoration(dividerItemDecoration);
-        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.HORIZONTAL);
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
         Drawable drawable = ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_divider);
         dividerItemDecoration.setDrawable(drawable);
         recyclerView.addItemDecoration(dividerItemDecoration);
+
+
         ArrayList<DataShop> arrayList = new ArrayList<>();
-        arrayList.add(new DataShop(R.drawable.banhtrangtron, "Bánh Tráng Trộn"));
-        arrayList.add(new DataShop(R.drawable.botchien, "Bột Chiên"));
-        arrayList.add(new DataShop(R.drawable.hutieu, "Hủ Tiếu"));
-        arrayList.add(new DataShop(R.drawable.supcua, "Súp Cua"));
-        arrayList.add(new DataShop(R.drawable.trasu, "Trà Sữa"));
-        arrayList.add(new DataShop(R.drawable.vuheo, "Vú Heo"));
+        arrayList.add(new DataShop(R.drawable.banhhuethuthao, "Bánh Tráng Trộn"));
+        arrayList.add(new DataShop(R.drawable.bundaumet, "Bột Chiên"));
+        arrayList.add(new DataShop(R.drawable.funfarm, "Hủ Tiếu"));
+        arrayList.add(new DataShop(R.drawable.lavacoffee, "Súp Cua"));
+        arrayList.add(new DataShop(R.drawable.pizzachanh, "Trà Sữa"));
         ShopAdapter shopAdapter = new ShopAdapter(arrayList, getApplicationContext());
         recyclerView.setAdapter(shopAdapter);
     }

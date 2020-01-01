@@ -36,15 +36,22 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.ViewHolder>
     {
         holder.textView.setText(arrayList.get(position).getTen());
         holder.imageView1.setImageResource(arrayList.get(position).getHinhAnh());
+        /*
+        Monan monan = mArrayMonans.get(position);
+        holder.mIvMonan.setImageResource(monan.getHinhanh());
+        holder.mTvGia.setText(monan.getGia()+"");
+        holder.mTvTen.setText(monan.getTen());
+        holder.mTvMota.setText(monan.getMota());
+        * */
     }
 
     @Override
     public int getItemCount()
     {
-        return arrayList.size();
+        return arrayList != null ? arrayList.size() : 0;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder
+    public class ViewHolder extends RecyclerView.ViewHolder //
     {
         TextView textView;
         ImageView imageView1;
